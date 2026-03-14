@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'translation_screen.dart';
 
 class LandingScreen extends StatefulWidget {
   const LandingScreen({super.key});
@@ -172,7 +173,12 @@ class _LandingScreenState extends State<LandingScreen> {
                     elevation: 0,
                   ),
                   onPressed: () {
-                    print("User selected: $selectedLanguage");
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => TranslationScreen(selectedLanguage: selectedLanguage),
+                      ),
+                    );
                   },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
